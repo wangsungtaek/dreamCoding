@@ -1,7 +1,7 @@
 // Callback hell example
 class UserStorage {
     loginUser(id, password, onSuccess, onError) {
-        setTimeout() => {
+        setTimeout(() => {
             if(
                 (id === 'ellie' && password === 'dream') ||
                 (id === 'coder' && password === 'academy')
@@ -14,7 +14,7 @@ class UserStorage {
     }
 
     getRoles(user, onSuccess, onError) {
-        setTimeout() => {
+        setTimeout(() => {
             if(user === 'ellie') {
                 onSuccess({ name: 'ellie', role: 'admin' });
             } else {
@@ -24,7 +24,7 @@ class UserStorage {
     }
 }
 
-const userStorage = new userStorage();
+const userStorage = new UserStorage();
 const id = prompt('enter your id');
 const password = prompt('enter your password');
 userStorage.loginUser(
@@ -41,9 +41,9 @@ userStorage.loginUser(
             error => {
                 console.log(error);
             }
-        };
+        );
     },
-    (error) => {
+    error => {
         console.log(error);
     }
-};
+);
